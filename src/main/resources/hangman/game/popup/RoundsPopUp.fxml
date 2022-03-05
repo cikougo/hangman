@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0"
+            prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="hangman.controllers.RoundsController">
+    <children>
+        <Label layoutX="35.0" layoutY="28.0" text="History of last 5 games played:">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Label>
+        <TableView fx:id="table" layoutX="31.0" layoutY="66.0" prefHeight="200.0" prefWidth="338.0">
+            <columns>
+                <TableColumn fx:id="word" prefWidth="168.0" text="Word"/>
+                <TableColumn fx:id="tries" prefWidth="77.0" text="Tries"/>
+                <TableColumn fx:id="result" prefWidth="90.0" text="Result"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

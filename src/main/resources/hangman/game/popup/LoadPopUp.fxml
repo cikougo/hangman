@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.controllers.LoadController">
+    <children>
+        <Label layoutX="28.0" layoutY="48.0" text="Input the Dictionary ID to create:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+        <TextField fx:id="loadInput" layoutX="43.0" layoutY="88.0" prefHeight="24.0" prefWidth="216.0" />
+        <Button fx:id="submitLoad" layoutX="125.0" layoutY="152.0" mnemonicParsing="false" text="Load" />
+        <Label fx:id="errorMessage" layoutX="43.0" layoutY="125.0" textFill="RED" />
+    </children>
+</AnchorPane>

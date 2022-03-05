@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.controllers.DictionaryController">
+    <children>
+        <Label layoutX="36.0" layoutY="36.0" text="Dictionary ID: ">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="dictId" layoutX="144.0" layoutY="36.0" />
+        <Label layoutX="41.0" layoutY="70.0" text="Stats based on number of letters:">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font></Label>
+        <Label fx:id="errorMessage" layoutX="85.0" layoutY="100.0" text="&lt;= 6:" />
+        <Label fx:id="lessThan6" layoutX="167.0" layoutY="100.0" />
+        <Label layoutX="36.0" layoutY="124.0" text="&gt;6 and &lt;=9:" />
+        <Label fx:id="between7And9" layoutX="167.0" layoutY="124.0" />
+        <Label layoutX="87.0" layoutY="150.0" text="&gt; 10:" />
+        <Label fx:id="moreThan10" layoutX="167.0" layoutY="150.0" />
+    </children>
+</AnchorPane>

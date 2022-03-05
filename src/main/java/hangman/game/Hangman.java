@@ -1,34 +1,28 @@
 package hangman.game;
 
-import hangman.medialab.Dictionary;
 import javafx.application.Application;
+
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Hangman extends Application {
-    @Override
-    public void init() throws IOException, InterruptedException {
-        try {
-            Dictionary dict = new Dictionary("OL31390631M");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
     @Override
-    public void start(Stage stage) throws IOException, InterruptedException {
-        BorderPane layout = new BorderPane();
-        Button btn = new Button("hi");
-        layout.setTop(btn);
-        Scene scene = new Scene(layout, 400, 400);
-        scene.getStylesheets().add(Hangman.class.getResource("Hangman.css").toExternalForm());
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage primaryStage) throws IOException, InterruptedException {
+        // only layout here, not logic
+        FXMLLoader loader = new FXMLLoader(Hangman.class.getResource("Hangman.fxml"));
+        BorderPane rootLayout = (BorderPane) loader.load();
+        Scene scene = new Scene(rootLayout, 800, 600);
+        GameSession.init(loader.getController());
+        primaryStage.setMinWidth(scene.getWidth());
+        primaryStage.setMinHeight(scene.getHeight() + 50);
+        primaryStage.setTitle("MediaLab Hangman");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
