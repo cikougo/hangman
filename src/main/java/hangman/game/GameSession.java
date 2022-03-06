@@ -26,7 +26,7 @@ public class GameSession {
     private List<String> solution;
     private int errors = 0;
     private int selectedLetter = 0;
-    private List<HashMap<String, Float>> probabilities;
+    private List<LinkedHashMap<String, Float>> probabilities;
     private String gameResult = null;
 
     public static void init(HangmanController hangmanController) {
@@ -41,7 +41,6 @@ public class GameSession {
         controller.setMainText("");
         Random rand = new Random();
         activeWord = activeDictionary.getWords().get(rand.nextInt(activeDictionary.getWords().size()));
-        System.out.println(activeWord);
         gameState = new ArrayList<>(activeWord.length());
         solution = new ArrayList<>(activeWord.length());
         for (int i = 0; i < activeWord.length(); i++) {
@@ -54,7 +53,6 @@ public class GameSession {
             Button btnLetter = new Button(gameState.get(index));
             btnLetter.setPrefHeight(40);
             btnLetter.setPrefWidth(40);
-            // TODO: button style
             btnLetter.setStyle("");
             btnLetter.setId("gameStateButton_" + index);
             btnLetter.setOnAction(new EventHandler<ActionEvent>() {
@@ -158,7 +156,6 @@ public class GameSession {
         numOfCorrectChoices = numOfCorrectChoices + 1;
         numOfChoices = numOfChoices + 1;
         if (gameState.equals(solution)) {
-            System.out.println("game win");
             this.winGame();
         }
     }
@@ -167,7 +164,6 @@ public class GameSession {
         numOfChoices = numOfChoices + 1;
         errors = errors + 1;
         if (errors == 6) {
-            System.out.println("game lost");
             this.loseGame();
         }
     }

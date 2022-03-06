@@ -18,7 +18,6 @@ public class CreatePopUp extends PopUp {
         try {
             rootLayout = (AnchorPane) loader.load();
         } catch (IOException e) {
-            System.out.println("error");
             e.printStackTrace();
         }
         Scene scene = new Scene(rootLayout, 300, 200);

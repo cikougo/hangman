@@ -16,7 +16,7 @@ public class Hangman extends Application {
         // only layout here, not logic
         FXMLLoader loader = new FXMLLoader(Hangman.class.getResource("Hangman.fxml"));
         BorderPane rootLayout = (BorderPane) loader.load();
-        Scene scene = new Scene(rootLayout, 800, 600);
+        Scene scene = new Scene(rootLayout, 1000, 600);
         GameSession.init(loader.getController());
         primaryStage.setMinWidth(scene.getWidth());
         primaryStage.setMinHeight(scene.getHeight() + 50);

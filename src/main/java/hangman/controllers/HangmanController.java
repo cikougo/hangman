@@ -117,7 +117,9 @@ public class HangmanController {
         detailsSolution.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                activeGameSession.surrenderGame();
+                if (activeGameSession != null && activeGameSession.isInProgress()) {
+                    activeGameSession.surrenderGame();
+                }
             }
         });
 
@@ -125,7 +127,6 @@ public class HangmanController {
         selectedLetter.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                System.out.println(newValue);
                 submitLetter.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
@@ -141,13 +142,11 @@ public class HangmanController {
         for (int i = 0; i < alphabet.length(); i++) {
             selectLetter.getItems().add(String.valueOf(alphabet.charAt(i)));
         }
+        selectLetter.setValue("A");
     }
 
     public void setHangmanState(int errors) {
-        System.out.println("hangman" + errors + ".svg");
         URL url = Hangman.class.getResource("hangman" + errors + ".svg");
-        System.out.println(url);
-
         webview.getEngine().load(url.toExternalForm());
     }
 
